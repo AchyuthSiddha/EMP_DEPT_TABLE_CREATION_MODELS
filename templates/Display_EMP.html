@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+<body style="background-image: url('{% static "images/Rolex.jpg" %}');">
+    <center>
+        <h1>Employee Table</h1>
+        <table border="3px">
+            <tr>
+                <th>EMPNO</th>
+                <th>ENAME</th>
+                <th>JOB</th>
+                <th>HIREDTAE</th>
+                <th>SAL</th>
+                <th>COMM</th>
+                <th>DEPTNO</th>
+                
+            </tr>
+            {% for i in Employee %}
+            <tr>
+                <td>
+                    {{ i.empno }}
+                </td>
+                <td>{{ i.ename }}</td>
+                <td>{{ i.job }}</td>
+                <td>{{ i.hiredate }}</td>
+                <td>{{ i.sal }}</td>
+                <td>{{ i.comm }}</td>
+                <td>{{ i.deptno }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
